@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+   <class name="com.vee.entity.Employee" table="EMPLOYEES">
+   	<id name="employeeID" column="employee_id" type="int"/>
+      <property name="firstName" column="first_name" type="string"/>
+      <property name="lastName" column="last_name" type="string"/>
+      <property name="email" column="email" type="string"/>
+      <many-to-one name="department" class="com.vee.entity.Department" fetch="select">
+      	<column name="department_id" not-null="true" />
+      </many-to-one>
+   </class>
+</hibernate-mapping>
