@@ -10,15 +10,16 @@ import org.hibernate.Transaction;
 
 import com.vee.dao.impl.DepartmentDAOImpl;
 import com.vee.dao.impl.EmployeeDAOImpl;
+import com.vee.dao.impl.StudentDAOImpl;
 import com.vee.entity.Department;
 import com.vee.entity.Employee;
 import com.vee.entity.Student;
 
 public class Main {
 	private static SessionFactory factory; 
-	   public static void main(String[] args) {
-		   
-		   DepartmentDAOImpl ddao = new DepartmentDAOImpl();
+	
+	public static void testEmployeeDepartment(){
+		DepartmentDAOImpl ddao = new DepartmentDAOImpl();
 		   List<Department> departments = ddao.list();
 		   for(Department d : departments){
 			   System.out.println(d.getDepartmentID() + " : " + d.getDepartmentName() + " - " + d.getManagerID() );
@@ -40,15 +41,19 @@ public class Main {
 				   System.out.println("Dept " + emp.getDepartment().getDepartmentName());
 			   }
 		   }
+	}
+	
+	   public static void main(String[] args) {
 		   
-		   // new code
-//		   StudentDAOImpl sdao = new StudentDAOImpl();
-//		   List<Student> students = sdao.list();
-//		   for(Iterator iterator = students.iterator();iterator.hasNext();){
-//			   Student std = (Student)iterator.next();
-//			   System.out.println("Student ID : " + std.getStudentId());
-//			   System.out.println("Name : " + std.getName());
-//		   }
+		   
+		   
+		   StudentDAOImpl sdao = new StudentDAOImpl();
+		   List<Student> students = sdao.list();
+		   for(Iterator iterator = students.iterator();iterator.hasNext();){
+			   Student std = (Student)iterator.next();
+			   System.out.println("Student ID : " + std.getStudentId());
+			   System.out.println("Name : " + std.getName());
+		   }
 //		   
 //		   Student s = sdao.find("1234567004");
 //		   System.out.println(s==null);

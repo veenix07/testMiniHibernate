@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="questions")
+@Table(name="questions", catalog="onlinetestdb")
 public class Question{
 
 	private Integer questionID;

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="categories")
+@Table(name="categories", catalog="onlinetestdb")
 public class Category {
 	private Integer categoryID;
 	private String categoryName;
