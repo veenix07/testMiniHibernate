@@ -8,18 +8,18 @@
       org.hibernate.dialect.MySQLDialect
    </property>
    <property name="hibernate.connection.driver_class">
-      oracle.jdbc.driver.OracleDriver
+      com.mysql.jdbc.Driver
    </property>
 
    <!-- Assume test is the database name -->
    <property name="hibernate.connection.url">
-      jdbc:oracle:thin:@localhost:1521:orcl
+      jdbc:mysql://localhost/onlinetestdb
    </property>
    <property name="hibernate.connection.username">
-      hr
+      root
    </property>
    <property name="hibernate.connection.password">
-      hr
+      password
    </property>
    <property name="show_sql">false</property>
 
@@ -28,6 +28,9 @@
    <mapping resource="StudentGrade.hbm.xml"/>
    <mapping resource="Employee.hbm.xml"/>
    <mapping class="com.vee.entity.Department"/>
+   <mapping class="com.vee.onlinetest.entity.Category"/>
+   <mapping class="com.vee.onlinetest.entity.Answer"/>
+   <mapping class="com.vee.onlinetest.entity.Question"/>
 
 </session-factory>
 </hibernate-configuration>
