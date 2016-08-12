@@ -24,9 +24,9 @@
    <property name="show_sql">false</property>
 
    <!-- List of XML mapping files -->
-   <mapping resource="Student.hbm.xml"/>
-   <mapping resource="StudentGrade.hbm.xml"/>
-   <mapping resource="Employee.hbm.xml"/>
+   <mapping resource="com.vee.entity.Student"/>
+   <mapping resource="com.vee.entity.StudentGrade"/>
+   <mapping class="com.vee.entity.Employee"/>
    <mapping class="com.vee.entity.Department"/>
    <mapping class="com.vee.onlinetest.entity.Category"/>
    <mapping class="com.vee.onlinetest.entity.Answer"/>
