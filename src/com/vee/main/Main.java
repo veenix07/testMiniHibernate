@@ -44,16 +44,27 @@ public class Main {
 	}
 	
 	   public static void main(String[] args) {
-		   
-		   
-		   
-		   StudentDAOImpl sdao = new StudentDAOImpl();
-		   List<Student> students = sdao.list();
-		   for(Iterator iterator = students.iterator();iterator.hasNext();){
-			   Student std = (Student)iterator.next();
-			   System.out.println("Student ID : " + std.getStudentId());
-			   System.out.println("Name : " + std.getName());
+		   EmployeeDAOImpl edao = new EmployeeDAOImpl();
+
+		   DepartmentDAOImpl ddao = new DepartmentDAOImpl();
+		   List<Department> departments = ddao.list();
+		   for(Department d : departments){
+			   List<Employee> employees = edao.findByDepartment(d);
+			   if( employees.size() > 0 ){
+				   System.out.println("Employee of " + d.getDepartmentName() + " department :");
+				   for(Employee emp : employees){
+					   System.out.println(emp.getFirstName());
+				   }
+			   }
 		   }
+		   
+//		   StudentDAOImpl sdao = new StudentDAOImpl();
+//		   List<Student> students = sdao.list();
+//		   for(Iterator iterator = students.iterator();iterator.hasNext();){
+//			   Student std = (Student)iterator.next();
+//			   System.out.println("Student ID : " + std.getStudentId());
+//			   System.out.println("Name : " + std.getName());
+//		   }
 //		   
 //		   Student s = sdao.find("1234567004");
 //		   System.out.println(s==null);
@@ -111,6 +122,7 @@ public class Main {
 	      /* List down new list of the employees */
 //	      main.listStudent();
 	   }
+	   
 	   /* Method to CREATE an employee in the database */
 	   /*public Integer addEmployee(String fname, String lname, int salary){
 	      Session session = factory.openSession();
@@ -129,6 +141,7 @@ public class Main {
 	      }
 	      return employeeID;
 	   }*/
+	   
 	   /* Method to  READ all the employees */
 	   public void listStudent( ){
 	      Session session = factory.openSession();
@@ -150,6 +163,7 @@ public class Main {
 	         session.close(); 
 	      }
 	   }
+	   
 	   /* Method to UPDATE salary for an employee */
 	   /*public void updateStudent(Integer studentID, int salary ){
 	      Session session = factory.openSession();
@@ -168,6 +182,7 @@ public class Main {
 	         session.close(); 
 	      }
 	   }*/
+	   
 	   /* Method to DELETE an employee from the records */
 	   /*public void deleteEmployee(Integer EmployeeID){
 	      Session session = factory.openSession();

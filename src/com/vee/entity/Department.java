@@ -1,5 +1,6 @@
 package com.vee.entity;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="departments", catalog="hr")
-public class Department {
+public class Department implements Serializable{
 
 	private Integer departmentID;
 	private String departmentName;

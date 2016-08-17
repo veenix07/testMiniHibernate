@@ -7,19 +7,30 @@
    <property name="hibernate.dialect">
       org.hibernate.dialect.MySQLDialect
    </property>
+   
+   <!-- 
+   driver_class :
+   MySQL : com.mysql.jdbc.Driver
+   Oracle :
+    -->
    <property name="hibernate.connection.driver_class">
-      com.mysql.jdbc.Driver
+   		oracle.jdbc.driver.OracleDriver	
    </property>
 
    <!-- Assume test is the database name -->
+    <!-- 
+	   driver_class :
+	   MySQL : jdbc:mysql://localhost/
+	   Oracle : jdbc:oracle:thin:@localhost:1521:hr
+    -->
    <property name="hibernate.connection.url">
-      jdbc:mysql://localhost/
+      jdbc:oracle:thin:@localhost:1521:orcl
    </property>
    <property name="hibernate.connection.username">
-      root
+      hr
    </property>
    <property name="hibernate.connection.password">
-      password
+      hr
    </property>
    
    <!-- Only set to true during debug mode -->

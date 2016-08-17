@@ -1,5 +1,7 @@
 package com.vee.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="employees")
-public class Employee {
+public class Employee implements Serializable{
 
 	private Integer employeeID;
 	private String firstName;
