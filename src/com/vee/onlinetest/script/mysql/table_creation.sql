@@ -1,3 +1,12 @@
+-- student table
+CREATE TABLE `student` (
+  `studentId` varchar(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `grade` int(11) DEFAULT NULL,
+  PRIMARY KEY (`studentId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
 -- categories table
 CREATE TABLE `categories` (
   `category_id` int(11) NOT NULL,

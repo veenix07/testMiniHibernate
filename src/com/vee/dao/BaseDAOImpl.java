@@ -3,10 +3,8 @@ package com.vee.dao;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -76,4 +74,9 @@ public abstract class BaseDAOImpl<E, PK extends Serializable> implements IDAO<E,
 		return lists;
 	}
 	
+	public List<E> findByCriteria(String column, String value){
+		return castList(type, getSessionFactory().openSession()
+												 .createQuery("from " + type.getName() + " where "
+														 	  + column + " = '" + value + "'").getResultList());
+	}
 }
