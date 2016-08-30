@@ -1,0 +1,11 @@
+driver_class :
+   MySQL : com.mysql.jdbc.Driver
+   Oracle : oracle.jdbc.driver.OracleDriver	
+
+jdbc url :  
+	MySQL : jdbc:mysql://localhost/
+	Oracle : jdbc:oracle:thin:@localhost:1521:orcl
+	
+user :
+	mysql : root/password
+	oracle : hr/hr

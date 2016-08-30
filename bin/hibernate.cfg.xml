@@ -9,12 +9,12 @@
    </property>
    
    <!-- 
-   driver_class :
+   driver_class : oracle.jdbc.driver.OracleDriver	
    MySQL : com.mysql.jdbc.Driver
    Oracle :
     -->
    <property name="hibernate.connection.driver_class">
-   		oracle.jdbc.driver.OracleDriver	
+   		com.mysql.jdbc.Driver
    </property>
 
    <!-- Assume test is the database name -->
@@ -24,13 +24,13 @@
 	   Oracle : jdbc:oracle:thin:@localhost:1521:hr
     -->
    <property name="hibernate.connection.url">
-      jdbc:oracle:thin:@localhost:1521:orcl
+      jdbc:mysql://localhost/
    </property>
    <property name="hibernate.connection.username">
-      hr
+      root
    </property>
    <property name="hibernate.connection.password">
-      hr
+      password
    </property>
    
    <!-- Only set to true during debug mode -->
